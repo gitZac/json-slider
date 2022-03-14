@@ -22,7 +22,9 @@ function populateSlides(arr){
 
     const slider = document.getElementById('slider');
 
-    arr.forEach(function(item) {
+    const shuffledArr = shuffleItems(arr);
+
+    shuffledArr.forEach(function(item) {
 
        const slideHtml = `
 

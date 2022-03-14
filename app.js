@@ -53,12 +53,29 @@ function pushJsonToArray(){
   
 }
 
-function getRandomItem(arr){
+// function getRandomItem(arr){
 
-    //get random index value
-    const randomIndex = Math.floor(Math.random() * arr.length );
+//     //get random index value
+//     const randomIndex = Math.floor(Math.random() * arr.length );
 
-    //get random item
-    const item = arr[randomIndex];
-    return item;
+//     //get random item
+//     const item = arr[randomIndex];
+//     return item;
+// }
+
+function shuffleItems(arr){
+    let currentIndex = arr.length
+    let randomIndex;
+
+    while (currentIndex != 0){
+
+        //get a random element from the array
+        randomIndex = Math.floor(Math.random() * currentIndex );
+        currentIndex --;
+
+        //swap with the current element.
+        [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];
+    }
+
+    return arr;
 }
