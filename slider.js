@@ -1,6 +1,6 @@
 //First, populate slider with our slides.
 
-const arr = pushJsonToArray();
+const arr = pushJsonToArray(data);
 populateSlides(arr);
 
 //Now, on the initial load, show the first slide.
@@ -21,7 +21,6 @@ function currentSlide(n) {
 function populateSlides(arr){
 
     const slider = document.getElementById('slider');
-
     const shuffledArr = shuffleItems(arr);
 
     shuffledArr.forEach(function(item) {
@@ -29,8 +28,8 @@ function populateSlides(arr){
        const slideHtml = `
 
         <div class="mySlides">
-            <q>${item.emailAddress}</q>
-            <p class="author">- ${item.firstName} ${item.lastName}</p>
+            <q>${item.advice}</q>
+            <p class="author">- ${item.fistName} ${item.lastName}</p>
         </div> `;
         
         slider.innerHTML += slideHtml;
@@ -52,8 +51,5 @@ function showSlides(n) {
     }
 
     //Set the current slide to display block.
-
-    //Load slide content here?
     slides[slideIndex-1].style.display = "block";
-
 }
